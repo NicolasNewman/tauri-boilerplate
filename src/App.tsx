@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import useStore from './store/counter';
 
 function App() {
+    const { state, dispatch } = useStore();
+    console.log(state);
     return (
         <div className="App">
             <header className="App-header">
