@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.less';
 import reportWebVitals from './reportWebVitals';
 import Store from './store/store';
+import { Switch, Route, Redirect, Router } from 'react-router-dom';
+import HomePage from './pages/HomePage';
 
+import { createBrowserHistory } from 'history';
+
+const history = createBrowserHistory();
 ReactDOM.render(
     <React.StrictMode>
-        <Store>
-            <App />
-        </Store>
+        <Router history={history}>
+            <Store>
+                <Switch>
+                    <Route exact path="/">
+                        <Redirect to="/app/home" />
+                    </Route>
+                    <Route path="/app/home">
+                        <HomePage loc={history.location.pathname} />
+                    </Route>
+                </Switch>
+            </Store>
+        </Router>
     </React.StrictMode>,
     document.getElementById('root')
 );

@@ -15,12 +15,12 @@ const counter: Reducer<CounterState, CounterAction> = (state: CounterState, acti
         case CounterActionType.INCREMENT:
             return {
                 ...state,
-                value: state.value++,
+                value: state.value + 1,
             };
         case CounterActionType.DECREMENT:
             return {
                 ...state,
-                value: state.value--,
+                value: state.value - 1,
             };
         case CounterActionType.ADD:
             return {
