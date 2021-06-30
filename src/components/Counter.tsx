@@ -17,9 +17,13 @@ const HomePage: React.FC = () => {
     return (
         <div>
             <div className="w-min flex items-center border-black border border-solid p-1">
-                <Button onClick={inc}>+</Button>
+                <Button type="primary" onClick={inc}>
+                    +
+                </Button>
                 <span className="mx-2">{state.value}</span>
-                <Button onClick={dec}>-</Button>
+                <Button type="primary" onClick={dec}>
+                    -
+                </Button>
             </div>
         </div>
     );

@@ -14,18 +14,22 @@ ReactDOM.render(
         <Router history={history}>
             <Store>
                 <Switch>
-                    <Route exact path="/">
-                        <Redirect to="/app/home" />
-                    </Route>
-                    <Route path="/app/home">
-                        <HomePage loc={history.location.pathname} />
-                    </Route>
+                    <div className="dark:bg-gray-800 dark:text-white h-screen w-screen">
+                        <Route exact path="/">
+                            <Redirect to="/app/home" />
+                        </Route>
+                        <Route path="/app/home">
+                            <HomePage loc={history.location.pathname} />
+                        </Route>
+                    </div>
                 </Switch>
             </Store>
         </Router>
     </React.StrictMode>,
     document.getElementById('root')
 );
+
+window.document.documentElement.classList.add('dark');
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
